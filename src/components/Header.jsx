@@ -10,7 +10,7 @@ function Header(){
   return(
     <header>
     <h1 className="heading" onClick={handleClick}>
-      NC News
+      NC News Homepage
     </h1>
     </header>
 )

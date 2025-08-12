@@ -3,16 +3,17 @@ import "./App.css";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import SingleArticlePage from "./components/SingleArticlePage";
+import Footer from "./components/Footer"
 
 function App() {
   return (
     <>
       <Header />
-      <SingleArticlePage />
-{/*       <Routes>
+      <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/articles/:article_id" element={<SingleArticlePage />} />
-      </Routes> */}
+      </Routes>
+  <Footer />
     </>
   );
 }
