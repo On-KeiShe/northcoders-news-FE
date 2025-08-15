@@ -1,5 +1,9 @@
-export function fetchArticles() {
-  return fetch("https://nc-news-by3b.onrender.com/api/articles")
+export function fetchArticles({ sort_by = "created_at", order = "desc" } = {}) {
+  const url = new URL("https://nc-news-by3b.onrender.com/api/articles");
+
+  url.searchParams.set("sort_by", sort_by);
+  url.searchParams.set("order", order); 
+    return fetch(url.toString())
     .then((response) => {
       return response.json();
     })
@@ -7,6 +11,13 @@ export function fetchArticles() {
       return data.articles;
     });
 }
+
+export function fetchArticlesByTopic(topic){
+  return fetch(`https://nc-news-by3b.onrender.com/api/articles?topic=${topic}`)
+    .then((response) => response.json())
+    .then((data) => data.articles);
+}
+
 
 export function fetchArticleById(article_id) {
   return fetch (`https://nc-news-by3b.onrender.com/api/articles/${article_id}`)
@@ -58,4 +69,14 @@ export function patchArticleVotes(article_id, voteChange){
   })
     .then((response) => response.json())
     .then((data) => data.article)
+}
+
+export function fetchTopics () {
+  return fetch ("https://nc-news-by3b.onrender.com/api/topics")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      return data.topics
+    });
 }
