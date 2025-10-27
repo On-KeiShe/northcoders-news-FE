@@ -15,7 +15,7 @@ This project is a news web application where users can browse articles, view top
 
 ## Links
 Frontend (this repo): https://github.com/On-KeiShe/northcoders-news-FE
-Backend API Repo:https://github.com/On-KeiShe/nc-news
+Backend API repo: https://github.com/On-KeiShe/northcoders-news-BE
 
 ## Requirements
 Node.js version: >=v24.2.0
